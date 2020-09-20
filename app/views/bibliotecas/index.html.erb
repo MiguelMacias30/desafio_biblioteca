@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'titulo', bibliotecas_path(ordenar:'titulo') %>
+<%= link_to 'estado', bibliotecas_path(ordenar:'estado') %>
+<h1>Bibliotecas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Estado</th>
+      <th>Fecha prestado</th>
+      <th>Fecha devolucion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bibliotecas.each do |biblioteca| %>
+      <tr>
+        <td><%= biblioteca.titulo %></td>
+        <td><%= biblioteca.autor %></td>
+        <td><%= biblioteca.estado %></td>
+        <td><%= biblioteca.fecha_prestado %></td>
+        <td><%= biblioteca.fecha_devolucion %></td>
+        <td><%= link_to 'Show', biblioteca %></td>
+        <td><%= link_to 'Edit', edit_biblioteca_path(biblioteca) %></td>
+        <td><%= link_to 'Destroy', biblioteca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Biblioteca', new_biblioteca_path %>

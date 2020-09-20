@@ -1,0 +1,42 @@
+<%= form_with(model: biblioteca, local: true) do |form| %>
+  <% if biblioteca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(biblioteca.errors.count, "error") %> prohibited this biblioteca from being saved:</h2>
+
+      <ul>
+      <% biblioteca.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.check_box :estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_prestado %>
+    <%= form.datetime_select :fecha_prestado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_devolucion %>
+    <%= form.datetime_select :fecha_devolucion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

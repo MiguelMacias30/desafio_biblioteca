@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @biblioteca.titulo %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @biblioteca.autor %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @biblioteca.estado %>
+</p>
+
+<p>
+  <strong>Fecha prestado:</strong>
+  <%= @biblioteca.fecha_prestado %>
+</p>
+
+<p>
+  <strong>Fecha devolucion:</strong>
+  <%= @biblioteca.fecha_devolucion %>
+</p>
+
+<%= link_to 'Edit', edit_biblioteca_path(@biblioteca) %> |
+<%= link_to 'Back', bibliotecas_path %>
